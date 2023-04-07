@@ -20,3 +20,7 @@ char* read_file(FILE *file);
 char* prep_pxl_array(char* bmp_content);
 
 void wait_until_closed(sf::RenderWindow& window);
+
+time_t start_timer();
+
+void end_timer(time_t start_time);

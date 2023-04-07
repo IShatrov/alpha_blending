@@ -66,3 +66,15 @@ void wait_until_closed(sf::RenderWindow& window)
 
 	return;
 }
+
+time_t start_timer()
+{
+	return time(NULL);
+}
+
+void end_timer(time_t start_time)
+{
+	time_t fin_time = time(NULL);
+
+	printf("Time spent: %d seconds\n", (int) (fin_time - start_time));
+}

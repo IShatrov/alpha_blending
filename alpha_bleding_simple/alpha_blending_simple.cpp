@@ -36,6 +36,8 @@ void blend(sf::RenderWindow& window, const char* front_pixels, const char *back_
     assert(front_pixels);
     assert(back_pixels);
 
+    time_t start_time = start_timer();
+
     for(int y = 0; y < HEIGHT; y++)
     {
         for(int x = 0; x < WIDTH; x++, back_pixels += BACK_STEP, front_pixels += FRONT_STEP)
@@ -52,6 +54,8 @@ void blend(sf::RenderWindow& window, const char* front_pixels, const char *back_
             draw_pxl(window, x, HEIGHT - y, sf::Color(clr.rgbRed, clr.rgbGreen, clr.rgbBlue, clr.rgbReserved));
         }
     }
+
+    end_timer(start_time);
 
     return;
 }
