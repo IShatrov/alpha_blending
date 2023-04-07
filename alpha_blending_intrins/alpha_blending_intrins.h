@@ -5,6 +5,8 @@
 
 #include <stdalign.h>
 
+#define ALIGNMENT 256
+
 const int MAX_CLR = 255;
 const int MAX_CLR_PW = 8; // MAX_CLR /approx 2^{MAX_CLR_PW}
 
@@ -25,4 +27,4 @@ __m256i set_32_clr(const char* pixels);
 
 unsigned int blend_once(unsigned int front_clr, unsigned int back_clr, unsigned int alpha);
 
-__m256i blend_clr(__m256i front, __m256i back);
+__m256i blend_clr(__m256i* front, __m256i* back);
